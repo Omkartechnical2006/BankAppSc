@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LoanPay</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      list-style-type: none;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60vh;
+
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0px 0px 20px 20px;
+      padding: 10px 0px;
+      width: 80vw;
+      height: auto;
+    }
+
+    button {
+      padding: 10px;
+      font-size: larger;
+      border: none;
+      font-weight: bolder;
+      background-color: black;
+      color: white;
+      border-radius: 10px;
+    }
+
+    .box {
+      box-shadow: 0px 0px 20px 20px;
+      padding: 100px;
+    }
+    .panel{
+      display: flex;
+      flex-direction: column;
+    }
+    #copy{
+      display: inline-block;
+    }
+    li:hover{
+      cursor: pointer;
+    }
+    #popupmsg{
+      display: none;
+      margin: 0px 0px 0px 20px;
+      font-weight: bolder;
+      font-size: large;
+      bottom: 50px;
+    }
+  </style>
+  <script>
+    // let ws = location.origin;
+    // // console.log(ws)
+    // let a = document.getElementsByTagName('a');
+    // console.log(a)
+    function copyCode() {
+  var codeBlock = document.getElementById('user');
+  var range = document.createRange();
+  range.selectNode(codeBlock);
+  window.getSelection().removeAllRanges();
+  window.getSelection().addRange(range);
+
+  try {
+    document.execCommand('copy');
+    window.getSelection().removeAllRanges();
+    document.getElementById("popupmsg").style.display="block";n
+  } catch (error) {
+    console.error('Failed to copy code:', error);
+  }
+}
+  </script>
+</head>
+<body onload="urlshortner()">
+  <%- include("./includes/logoutnav.ejs") %>
+    <br><br>
+    <div class="container">
+      <div class="box">
+        <ul class="panel">
+          <li onclick="copyCode()">user: <span id="user"><%=url%></span> </a>
+           <img id="copy" src="svg/copy.svg" alt="Copy" width="15px">
+           <span id="popupmsg">link copied successfully</span> 
+          </li>
+          <li>Admin: <a id="admin" href="<%=url%>/admin" target="_blank"><%=url%>/admin</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="display: flex; justify-content: center;">
+      <div class="btn">
+        <form action="/administrator" method="get">
+          <button>Login as a admin</button>
+        </form>
+      </div>
+    </div>
+    <script>
+      const urlshortner=()=>{
+        let user = document.getElementById("user");
+        let admin = document.getElementById("admin");
+        user.innerText=`${location.origin}/${user.innerText}`;
+        admin.innerText=`${location.origin}/${admin.innerText}`;
+      }
+    </script>
+</body>
+</html>

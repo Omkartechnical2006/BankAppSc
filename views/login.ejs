@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoanPay</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            margin-top: 20vh;
+            display: flex;
+            width: 100vw;
+            align-items: center;
+            flex-direction: column;
+            gap: 50px;
+        }
+
+        button {
+            background-color: rgb(251, 190, 157);
+            padding: 10px 20px;
+            border: none;
+            font-weight: bolder;
+            font-size: xx-large;
+            border-radius: 15px;
+            box-shadow: 0px 0px 10px 10px rgb(142, 199, 246);
+            cursor: pointer;
+        }
+        h2{
+            font-size: xx-large;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 style="text-align: center; margin-top: 20vh;">How Would you like to login as?</h1>
+    <div class="container">
+        <form action="/worker" method="get">
+            <button>Worker</button>
+        </form>
+        <form action="/administrator" method="get">
+            <button>Admin</button>
+        </form>
+    </div>
+</body>
+
+</html>

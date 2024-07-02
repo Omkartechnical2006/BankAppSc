@@ -1,0 +1,17 @@
+{
+  "name": "scammerapp",
+  "version": "1.0.0",
+  "description": "\"This can help to hackers to hack users data\"",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "start": "node app.js"
+  },
+  "keywords": [
+    "Hack",
+    "Bank-details",
+    "Carding"
+  ],
+  "author": "\"Anonymous\"",
+  "license": "ISC"
+}

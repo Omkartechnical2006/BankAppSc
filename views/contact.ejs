@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>LoanPay</title>
+   <link rel="stylesheet" href="css/contact.css">
+</head>
+
+<body>
+   <%- include("./includes/navbar.ejs") %>
+   <div class="container">
+      <div class="userform">
+         <div class="box">
+            <div class="text">
+               Contact us
+            </div>
+            <form action="#">
+               <div class="form-row">
+                  <div class="input-data">
+                     <input type="text" required>
+                     <div class="underline"></div>
+                     <label for="">First Name</label>
+                  </div>
+                  <div class="input-data">
+                     <input type="text" required>
+                     <div class="underline"></div>
+                     <label for="">Last Name</label>
+                  </div>
+               </div>
+               <div class="form-row">
+                  <div class="input-data">
+                     <input type="text" required>
+                     <div class="underline"></div>
+                     <label for="">Email Address</label>
+                  </div>
+                  <div class="input-data">
+                     <input type="text" required>
+                     <div class="underline"></div>
+                     <label for="">Website Name</label>
+                  </div>
+               </div>
+               <div class="form-row">
+                  <div class="input-data textarea">
+                     <textarea rows="8" cols="80" required></textarea>
+                     <br />
+                     <div class="underline"></div>
+                     <label for="">Write your message</label>
+                     <br />
+                     <div class="form-row submit-btn">
+                        <div class="input-data">
+                           <div class="inner"></div>
+                           <input type="submit" value="submit">
+                        </div>
+                        <div class="contact">
+                           <span style="color:black; text-align: center; padding: 10px;">contact us: </span><a
+                              href="mailto:rakmo3732@gmail.com"><img src="svg/gmail.svg" alt=""></a>
+                        </div>
+                     </div>
+            </form>
+         </div>
+      </div>
+   </div>
+</body>
+
+</html>

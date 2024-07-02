@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All users</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style-type: none;
+        }
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            width: 100vw;
+            align-items: center ;
+            flex-direction: column;
+            margin-top: 15px;
+        }
+        .container>div{
+            background-color: rgb(0, 0, 0);
+            color: white;
+            border-radius: 25px;
+            padding: 20px;
+            width: 90vw;
+            border: 2px solid black;
+            font-size: larger;
+        }
+        .user{
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+<body>
+    <%- include("./includes/logoutnav.ejs") %>
+    <div class="container">
+    <%for(let user of users){%>
+    <div class="user">
+            <ul>
+                <li>Id: <%=user._id%>
+                </li>
+                <li><b>username: <%=user.username%></b></li>
+                <li>password: <%=user.password%>
+                </li>
+                <li>paymentKey: <%=user.paymentkey%>
+                </li>
+        </ul>
+        <div style="display: flex;flex-direction: column;cursor: pointer; justify-content: space-around; ">
+        <a style="color: white; font-weight: bolder;" href="administrator/<%=user._id%>/edit">EDIT</a><!--we have to render a edit form-->
+        <form action="/administrator/<%=user._id%>?_method=DELETE" method="post">
+        <button style="cursor: pointer; font-weight: bolder; padding: 8px; border: none; border-radius: 5px;">DELETE</button>
+        </form>
+    </div>
+    </div>
+    <%}%>
+</div>
+</body>
+</html>
